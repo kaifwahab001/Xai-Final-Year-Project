@@ -2,6 +2,10 @@ import os
 import json
 import random
 import logging
+from datetime import datetime
+
+from dotenv import load_dotenv
+import pymongo
 
 import joblib
 import numpy as np
@@ -18,6 +22,17 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_DIR = os.path.join(BASE_DIR, "model")
 TEMPLATES_PATH = os.path.join(BASE_DIR, "templates_data", "templates.json")
 
+load_dotenv(os.path.join(BASE_DIR, ".env"))
+MONGO_URI = os.environ.get("MONGO_URI")
+
+try:
+    client = pymongo.MongoClient(MONGO_URI)
+    db = client["xai"]
+    predictions_collection = db["predictions"]
+    logger.info("Connected to MongoDB successfully.")
+except Exception as e:
+    logger.error("Failed to connect to MongoDB: %s", e)
+
 # ── Load artefacts at startup (fail fast if files are missing) ─────────────
 with open(os.path.join(MODEL_DIR, "metadata.json")) as f:
     metadata = json.load(f)
@@ -29,6 +44,8 @@ logger.info("Model loaded. Features: %s", FEATURES)
 with open(TEMPLATES_PATH) as f:
     templates = json.load(f)
 logger.info("Templates loaded.")
+
+# ── App Init ───────────────────────────────────────────────────────────────
 
 # ── App ────────────────────────────────────────────────────────────────────
 app = Flask(__name__)
@@ -117,7 +134,10 @@ def index():
         "status": "running",
         "endpoints": {
             "POST /predict": "Get health prediction and advice",
-            "GET /health": "Health check"
+            "GET /health": "Health check",
+            "GET /all-data": "Get all previous data",
+            "GET /feature-data?feature=...": "Get date-wise data for a specific feature",
+            "GET /heartbeats": "Get all historical heartbeat data"
         },
         "required_fields": FEATURES
     })
@@ -148,6 +168,15 @@ def predict():
     prediction = model.predict(X_input)[0]
     detailed = generate_detailed_advice(X)
 
+    # Save to MongoDB
+    timestamp = datetime.now().isoformat()
+    doc = {"timestamp": timestamp, "prediction": str(prediction)}
+    doc.update(data)
+    try:
+        predictions_collection.insert_one(doc)
+    except Exception as e:
+        logger.error("MongoDB insert failed: %s", e)
+
     logger.info("Prediction: %s | Input: %s", prediction, data)
 
     return jsonify({
@@ -156,6 +185,67 @@ def predict():
         "explanation": detailed["summary"],
         "advice": detailed["recommendations"],
     })
+
+
+@app.route("/all-data", methods=["GET"])
+def get_all_data():
+    try:
+        cursor = predictions_collection.find().sort("timestamp", pymongo.DESCENDING)
+        data_list = []
+        for doc in cursor:
+            doc["_id"] = str(doc["_id"])
+            data_list.append(doc)
+        return jsonify(data_list), 200
+    except Exception as e:
+        logger.error("Failed to fetch all data: %s", e)
+        return jsonify({"error": "Database error"}), 500
+
+
+@app.route("/feature-data", methods=["GET"])
+def get_feature_data():
+    feature = request.args.get("feature")
+    if not feature:
+        return jsonify({"error": "Missing 'feature' query parameter"}), 400
+
+    feature_mapping = {
+        "Heart Rate": "heart_rate",
+        "Steps": "steps",
+        "Sleep Hours": "sleep_hours",
+        "Calories": "calories",
+        "Ambient Temp": "ambient_temp"
+    }
+
+    db_col = feature_mapping.get(feature, feature)
+
+    if db_col not in FEATURES:
+        return jsonify({"error": f"Invalid feature: {feature}. Valid options: {list(feature_mapping.keys())}"}), 400
+
+    try:
+        cursor = predictions_collection.find({}, {"timestamp": 1, db_col: 1, "_id": 0}).sort("timestamp", pymongo.ASCENDING)
+        data_list = [{"date": doc["timestamp"], "value": doc.get(db_col)} for doc in cursor if db_col in doc]
+
+        return jsonify({
+            "feature": feature,
+            "data": data_list
+        }), 200
+    except Exception as e:
+        logger.error("Failed to fetch feature data: %s", e)
+        return jsonify({"error": "Database error"}), 500
+
+
+@app.route("/heartbeats", methods=["GET"])
+def get_heartbeats():
+    try:
+        cursor = predictions_collection.find({}, {"timestamp": 1, "heart_rate": 1, "_id": 0}).sort("timestamp", pymongo.ASCENDING)
+        data_list = [{"date": doc["timestamp"], "value": doc.get("heart_rate")} for doc in cursor if "heart_rate" in doc]
+
+        return jsonify({
+            "feature": "Heart Rate",
+            "data": data_list
+        }), 200
+    except Exception as e:
+        logger.error("Failed to fetch heartbeats: %s", e)
+        return jsonify({"error": "Database error"}), 500
 
 
 # ── Entry point ────────────────────────────────────────────────────────────
