@@ -1,0 +1,263 @@
+{
+    "heart_rate": {
+        "high": {
+            "reasons": [
+                "Your heart rate is higher than normal.",
+                "It seems your heart is beating a little fast.",
+                "Your heart rate is elevated.",
+                "A rapid heart rate has been detected.",
+                "Your heart rate is showing signs of being overworked.",
+                "Your heart's activity seems to be above your usual baseline.",
+                "A higher-than-average heart rate was noted.",
+                "We're seeing an elevated pulse.",
+                "It looks like your heart rate has increased.",
+                "Your heart is working harder than usual.",
+                "A spike in your heart rate was noticed.",
+                "Your pulse is racing a bit today.",
+                "Your heart is working a bit overtime today, maybe due to excitement or stress.",
+                "Looks like your heart is having a busy day!",
+                "Your heart rate is up—maybe you've been active or feeling strong emotions.",
+                "A little extra energy in your heart today!"
+            ],
+            "advice": [
+                "Consider practicing deep breathing or taking a short break.",
+                "Try a few minutes of meditation to help calm your system.",
+                "Step away from your desk and stretch for a moment.",
+                "Do a quick relaxation exercise to bring your heart rate down.",
+                "Take a moment to sit and collect your thoughts.",
+                "Sipping some water can help regulate your heart rate.",
+                "Consider a light, restorative stretch to de-stress.",
+                "Focus on your breath for 60 seconds to find your center.",
+                "Pause for a moment and take a few deep breaths.",
+                "Try listening to calming music to relax.",
+                "Consider a gentle walk to help your heart settle.",
+                "Take a few moments to relax and let your heart settle down.",
+                "Maybe pause for a cup of tea and some deep breaths.",
+                "If you're feeling stressed, try to step outside for some fresh air.",
+                "Remember, it's okay to slow down and take care of yourself."
+            ]
+        },
+        "low": {
+            "reasons": [
+                "Your heart rate is a bit lower than the healthy range.",
+                "Your heart beat is a little sluggish.",
+                "It seems your resting heart rate is quite low.",
+                "A low heart rate has been detected.",
+                "Your heart rate is lower than your typical rhythm.",
+                "Your pulse is unusually slow.",
+                "The current heart rate is below the optimal range.",
+                "We've observed a slow and steady heart beat.",
+                "Your heart seems to be moving at a relaxed pace.",
+                "Your heart is beating slower than normal.",
+                "A calm and slow heart rate is observed.",
+                "Your pulse is on the lower side today.",
+                "Your heart is taking it easy right now—maybe you're very relaxed.",
+                "A calm heart can be a sign of rest, but let's keep an eye on it.",
+                "Your heart is in chill mode today.",
+                "Sometimes a slow heart rate is just your body saying 'rest'."
+            ],
+            "advice": [
+                "Engage in some light activity to get your heart pumping.",
+                "Take a short, brisk walk to stimulate your circulation.",
+                "Try some jumping jacks or a quick set of squats.",
+                "A little bit of light cardio can make a difference.",
+                "Consider a brief burst of activity to get things moving.",
+                "A short period of gentle exercise can help normalize your pulse.",
+                "Try a few calf raises or arm circles.",
+                "Stand up and do a few stretches.",
+                "A few stretches might help boost your heart rate.",
+                "Try standing up and moving around for a bit.",
+                "A glass of water and some movement can help.",
+                "A little movement can help get your energy flowing.",
+                "Try standing up and stretching your arms and legs.",
+                "Maybe put on your favorite song and dance for a minute!",
+                "If you feel tired, a splash of cold water can help wake you up."
+            ]
+        },
+        "normal": {
+            "reasons": [
+                "Your heart rate is within a healthy range.",
+                "Your heart is maintaining a steady beat.",
+                "All looks well with your heart rate.",
+                "Your heart is at a healthy rhythm.",
+                "Your pulse is stable and in a good range.",
+                "Your heart rate is perfectly normal.",
+                "The readings show a healthy and consistent heart rhythm.",
+                "Your heart is working just as it should be.",
+                "We're seeing a textbook heart rate.",
+                "Your pulse is ideal.",
+                "Your heart rate is just right.",
+                "Everything looks good with your pulse.",
+                "Your heart is in a great rhythm today.",
+                "Your heart is in a great place today—keep it up!",
+                "Everything looks smooth and steady with your heart.",
+                "Your heart is happy and healthy right now.",
+                "A steady heart is a sign of good balance in your life."
+            ],
+            "advice": [
+                "Keep up your healthy heart habits!",
+                "Great job maintaining a steady heart rate!",
+                "Your heart is looking great!",
+                "Continue your healthy lifestyle to maintain this!",
+                "Excellent work on keeping your heart in shape!",
+                "You're in a healthy rhythm. Keep it up!",
+                "Your habits are paying off. Stay consistent!",
+                "This is exactly what we like to see. Good job!",
+                "Keep doing what you're doing!",
+                "Your healthy habits are working.",
+                "Stay consistent for continued good health.",
+                "Keep doing what makes you feel good!",
+                "Your heart thanks you for your healthy choices.",
+                "Stay positive and keep up the great work!",
+                "It's wonderful to see such healthy numbers—celebrate yourself!"
+            ]
+        }
+    },
+    "steps": {
+        "low": {
+            "reasons": [
+                "You have taken fewer steps today.",
+                "Your step count is lower than your average.",
+                "Looks like you've had a less active day.",
+                "You've been a bit sedentary today.",
+                "Your movement seems limited today.",
+                "We're seeing a low number of steps.",
+                "You haven't hit your activity goals for today yet.",
+                "Your activity level is below average.",
+                "You have not been as mobile as usual.",
+                "You could use a bit more movement today.",
+                "Your activity level is a bit low.",
+                "Not many steps recorded so far.",
+                "A quiet day for your feet—maybe it's time for a little stroll.",
+                "Not much movement yet, but there's still time to get active!",
+                "Your step count is low, but every step counts.",
+                "A gentle reminder to move your body today."
+            ],
+            "advice": [
+                "Aim for a 10-15 minute walk.",
+                "Try to fit in a short walk during a break.",
+                "Even a short stroll can make a difference.",
+                "Consider taking the stairs instead of the elevator.",
+                "Try a quick walk around the office or home.",
+                "A short walk after a meal can help.",
+                "Set a reminder to get up and move every hour.",
+                "A brief stroll can help you feel more energized.",
+                "Try a quick walk outside for fresh air.",
+                "A few laps around your home can help.",
+                "Set a small step goal for the next hour.",
+                "Even a walk around the room can help you feel refreshed.",
+                "Invite a friend or family member for a quick walk together.",
+                "Set a fun goal, like dancing for five minutes!",
+                "Remember, small movements add up over the day."
+            ]
+        },
+        "high": {
+            "reasons": [
+                "You have maintained good physical activity.",
+                "You've been very active today.",
+                "Your step count is impressive!",
+                "You've hit your activity goal!",
+                "Your physical activity has been excellent.",
+                "You are well above your daily steps goal.",
+                "Your step count is a great sign of an active day.",
+                "We're seeing a fantastic number of steps.",
+                "You've been very mobile and active.",
+                "You're crushing your step goals!",
+                "Fantastic movement today.",
+                "Your activity is inspiring.",
+                "You're really on the move today—awesome job!",
+                "Your activity is inspiring—keep it going!",
+                "You've made your body happy with all those steps.",
+                "Movement is medicine, and you're getting a great dose!"
+            ],
+            "advice": [
+                "Great job staying active!",
+                "Keep up the great work!",
+                "You're on a roll with your fitness goals!",
+                "Your hard work is paying off, keep it up!",
+                "You're doing an amazing job. Stay consistent!",
+                "Excellent performance today!",
+                "Keep this momentum going!",
+                "Your dedication is showing!",
+                "Celebrate your progress!",
+                "Keep up the active lifestyle.",
+                "Your body thanks you for staying active.",
+                "Give yourself a pat on the back for being so active.",
+                "Maybe treat yourself to a healthy snack as a reward.",
+                "Share your success with a friend and inspire them too!",
+                "Keep enjoying your active lifestyle—your future self will thank you."
+            ]
+        }
+    },
+    "sleep_hours": {
+        "low": {
+            "reasons": [
+                "You had less than 6 hours of sleep.",
+                "Your sleep duration was a bit short.",
+                "It seems you didn't get enough rest.",
+                "A short night of sleep has been detected.",
+                "Your sleep hours are below the recommended range.",
+                "We're seeing a shorter than ideal sleep cycle.",
+                "You may be feeling the effects of a lack of sleep.",
+                "You might feel tired with less sleep.",
+                "Short sleep can affect your mood.",
+                "Not enough rest last night.",
+                "A short night can make the day feel longer—try to rest up tonight.",
+                "Not much sleep last night, but you can catch up soon.",
+                "Your body might need a little extra care today.",
+                "Remember, everyone has a rough night sometimes."
+            ],
+            "advice": [
+                "Try to improve sleep quality by reducing screen time before bed.",
+                "Make sure to get more rest tonight.",
+                "Set a consistent bedtime to help your body get into a routine.",
+                "Consider using a sleep meditation app to unwind.",
+                "Aim for at least 7-8 hours of sleep tonight.",
+                "Try to create a more relaxing sleep environment.",
+                "Avoid caffeine and heavy meals before bedtime.",
+                "Make sure your room is dark and cool for better sleep.",
+                "Try to wind down earlier tonight.",
+                "A short nap could help recharge.",
+                "Prioritize rest for better energy.",
+                "Try a relaxing bedtime routine tonight—maybe a book or soft music.",
+                "If you can, sneak in a short nap to recharge.",
+                "Be gentle with yourself today and listen to your body.",
+                "A warm shower before bed can help you unwind."
+            ]
+        },
+        "high": {
+            "reasons": [
+                "Your sleep duration is healthy.",
+                "You got a solid amount of sleep.",
+                "You had a great night of rest!",
+                "Your sleep duration is excellent.",
+                "We're seeing a great sleep cycle.",
+                "You are well-rested based on your sleep data.",
+                "Your body seems to have gotten the rest it needed.",
+                "You got plenty of rest.",
+                "Your sleep was on point.",
+                "You’re well-rested and ready.",
+                "You slept like a champ—way to go!",
+                "Your body got the rest it needed for a great day ahead.",
+                "A good night's sleep is the best gift you can give yourself.",
+                "You're well-rested and ready to shine!"
+            ],
+            "advice": [
+                "Maintain your good sleep routine!",
+                "Looks like you're well-rested!",
+                "You're in a great state to take on the day!",
+                "Keep this up for a healthy mind and body.",
+                "Your sleep habits are very healthy. Keep it up!",
+                "A great night's sleep sets you up for success. Good job!",
+                "Continue to prioritize your rest.",
+                "Use your energy for something fun today!",
+                "Keep up the great sleep habits.",
+                "A good night's sleep is a great foundation.",
+                "Enjoy your energy and make the most of your day!",
+                "Keep up the great sleep habits—your body loves it.",
+                "Share your sleep success with someone and encourage them too!",
+                "A well-rested mind is ready for anything—go for it!"
+            ]
+        }
+    }
+}

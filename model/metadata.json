@@ -1,0 +1,1 @@
+{"features": ["heart_rate", "steps", "sleep_hours", "calories", "ambient_temp"], "target": "advice", "model_path": "model/model.pkl"}
