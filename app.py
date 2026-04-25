@@ -23,7 +23,7 @@ MODEL_DIR = os.path.join(BASE_DIR, "model")
 TEMPLATES_PATH = os.path.join(BASE_DIR, "templates_data", "templates.json")
 
 load_dotenv(os.path.join(BASE_DIR, ".env"))
-MONGO_URI = os.environ.get("MONGO_URI")
+MONGO_URI = os.environ.get("MONGODB_URI") or os.environ.get("MONGO_URI")
 
 try:
     client = pymongo.MongoClient(MONGO_URI)
